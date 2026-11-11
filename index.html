@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b12">
+<title>НОМЕРА: LEGEND</title>
+<style>
+:root{--bg:#090b12;--panel:#121622;--panel2:#191f2e;--line:#2b3448;--gold:#f4c76b;--muted:#9aa5b8;--text:#f4f6fb;--green:#7ee0b0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#29304a 0%,#101522 38%,var(--bg) 75%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;padding-bottom:88px}
+header{padding:22px 18px 14px;max-width:760px;margin:auto}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:800}.brand{font-size:26px;font-weight:950;letter-spacing:1px;margin:3px 0}.brand span{color:var(--gold)}.sub{color:var(--muted);font-size:12px}
+.wrap{max-width:760px;margin:auto;padding:0 14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 16px}.stat,.panel{background:linear-gradient(145deg,#171d2b,#101520);border:1px solid var(--line);border-radius:17px;padding:13px}.stat small{display:block;color:var(--muted);font-size:11px}.stat b{font-size:18px}.gold{color:var(--gold)}
+.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 12px;scrollbar-width:none}.tab{border:1px solid var(--line);background:#111725;color:var(--muted);border-radius:12px;padding:10px 13px;white-space:nowrap;font-weight:700}.tab.active{background:#3b3040;border-color:#80633b;color:#ffe0a0}
+section{display:none}section.active{display:block}.hero{padding:20px 15px;text-align:center;background:linear-gradient(150deg,#22283a,#111621 68%);border:1px solid #41445a;border-radius:22px;box-shadow:0 16px 40px #0006}.hero h2{margin:0 0 5px;font-size:18px}.hero p{color:var(--muted);margin:0 0 18px;font-size:12px}
+.plate{background:linear-gradient(#fff,#e8ebef);color:#10131a;border:3px solid #aab0b9;border-radius:9px;display:flex;align-items:center;justify-content:center;margin:16px auto 12px;max-width:340px;height:86px;box-shadow:0 8px 22px #0007;position:relative;font-family:Arial,sans-serif;font-weight:900;letter-spacing:2px;font-size:clamp(24px,7vw,37px);text-shadow:0 1px #fff}
+.plate:before{content:"RUS";position:absolute;right:7px;bottom:5px;font-size:9px;letter-spacing:0;color:#26364a}.plate:after{content:"";position:absolute;right:31px;bottom:4px;width:14px;height:8px;background:linear-gradient(#fff 33%,#2452a4 33% 66%,#d43c3c 66%);border:1px solid #aaa}
+.plate .region{font-size:.58em;margin-left:6px}.rarity{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--gold);text-transform:uppercase}.value{font-size:20px;font-weight:900;margin:4px}
+button{cursor:pointer;border:0;font:inherit;font-weight:800;border-radius:13px;padding:13px 15px;color:#17130b;background:linear-gradient(135deg,#ffe09a,#d99b3f);box-shadow:0 5px 16px #0004}button:active{transform:scale(.98)}button.secondary{background:#242d40;color:#e8edf8;border:1px solid #3c4962;box-shadow:none}button.danger{background:#3b2530;color:#ffb8c3;border:1px solid #67404b;box-shadow:none}.big{width:100%;font-size:16px;padding:16px;margin-top:8px}.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.section-title{font-size:18px;margin:6px 2px 12px}.muted{color:var(--muted)}.small{font-size:12px}.item{display:flex;align-items:center;gap:10px;padding:11px;margin:8px 0;background:#171e2c;border:1px solid var(--line);border-radius:14px}.mini-plate{font-family:Arial;font-weight:900;color:#111;background:#edf0f3;border:2px solid #aeb5c0;border-radius:5px;padding:8px 5px;min-width:116px;text-align:center;font-size:14px}.item-info{flex:1;min-width:0}.item-info b{display:block}.item-info small{color:var(--muted)}.item button{padding:9px 10px;font-size:12px}.empty{text-align:center;color:var(--muted);padding:30px 10px;border:1px dashed #39445a;border-radius:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.upgrade{background:#171e2c;border:1px solid var(--line);border-radius:15px;padding:13px}.upgrade h3{font-size:14px;margin:0 0 5px}.upgrade p{font-size:11px;color:var(--muted);min-height:32px;margin:0 0 10px}.upgrade button{width:100%;padding:10px;font-size:12px}
+.task{padding:13px;background:#171e2c;border:1px solid var(--line);border-radius:14px;margin:8px 0}.bar{height:7px;background:#30394b;border-radius:9px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,#d89b45,#ffe3a0);width:0}
+nav{position:fixed;bottom:0;left:0;right:0;background:#0c1019ed;border-top:1px solid #293246;display:flex;justify-content:center;gap:5px;padding:9px 8px calc(9px + env(safe-area-inset-bottom));backdrop-filter:blur(14px);z-index:5}.navbtn{flex:1;max-width:145px;background:transparent;color:#8994a8;box-shadow:none;border:0;padding:8px 3px;font-size:11px}.navbtn.active{color:var(--gold);background:#282437}.navbtn span{display:block;font-size:19px;margin-bottom:2px}
+.toast{position:fixed;top:15px;left:50%;transform:translate(-50%,-150%);background:#273449;border:1px solid #64728c;padding:11px 16px;border-radius:13px;z-index:10;transition:.25s;max-width:90%;text-align:center}.toast.show{transform:translate(-50%,0)}
+footer{text-align:center;color:#657087;font-size:10px;padding:20px}
+@media(min-width:600px){.hero{padding:28px}.plate{height:100px}.stats{gap:12px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">COLLECT • TRADE • UPGRADE</div><div class="brand">НОМЕРА: <span>LEGEND</span></div><div class="sub">Твоя коллекция. Твоя удача. Твои правила.</div></header>
+<div class="wrap">
+<div class="stats">
+ <div class="stat"><small>Баланс</small><b class="gold" id="coins">1 000 ₽</b></div>
+ <div class="stat"><small>Найдено номеров</small><b id="count">0</b></div>
+ <div class="stat"><small>Уровень</small><b id="level">1</b></div>
+</div>
+<div class="tabs">
+ <button class="tab active" data-tab="draw">Генератор</button><button class="tab" data-tab="collection">Коллекция</button><button class="tab" data-tab="upgrades">Улучшения</button><button class="tab" data-tab="daily">Задания</button><button class="tab" data-tab="gallery">Галерея</button>
+</div>
+<section id="draw" class="active">
+ <div class="hero"><h2>Охота за идеальным номером</h2><p>Каждая попытка может стать легендарной</p>
+ <div class="rarity" id="rarity">ГОТОВ К ОХОТЕ</div>
+ <div class="plate" id="plate">А 000 АА <span class="region">77</span></div>
+ <div class="value" id="plateValue">—</div><div class="muted small" id="plateHint">Нажми кнопку, чтобы получить первый номер</div>
+ <button class="big" id="roll">🎲 Сгенерировать номер · 100 ₽</button>
+ <div class="row"><button class="secondary" id="sellCurrent" disabled>Продать</button><button class="secondary" id="keepCurrent" disabled>В коллекцию</button></div>
+ </div>
+ <p class="muted small" style="text-align:center">Редкость влияет на стоимость. Повторяющиеся комбинации встречаются реже.</p>
+</section>
+<section id="collection"><div class="section-title">Твоя коллекция</div><div class="muted small" id="collectionMeta">Сохраняй лучшие находки или продавай дубликаты.</div><div id="collectionList"></div></section>
+<section id="upgrades"><div class="section-title">Мастерская улучшений</div><div class="grid" id="upgradeList"></div></section>
+<section id="daily"><div class="section-title">Ежедневные задания</div><div class="panel"><b>Ежедневный бонус</b><p class="muted small">Забирай награду один раз в день.</p><button id="dailyReward">Получить +500 ₽</button><div class="small muted" id="dailyStatus"></div></div><div id="tasks"></div></section>
+<section id="gallery"><div class="section-title">Зал легенд</div><p class="muted small">Примеры редких комбинаций и их ориентировочная игровая стоимость.</p><div id="galleryList"></div></section>
+</div>
+<footer>НОМЕРА: LEGEND · Прогресс хранится на этом устройстве</footer>
+<nav>
+ <button class="navbtn active" data-tab="draw"><span>🎲</span>Генератор</button><button class="navbtn" data-tab="collection"><span>🏆</span>Коллекция</button><button class="navbtn" data-tab="upgrades"><span>⚙️</span>Улучшения</button><button class="navbtn" data-tab="daily"><span>🎁</span>Задания</button><button class="navbtn" data-tab="gallery"><span>💎</span>Галерея</button>
+</nav>
+<div class="toast" id="toast"></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id), fmt=n=>Math.floor(n).toLocaleString('ru-RU')+' ₽';
+const letters='АВЕКМНОРСТУХ',regions=['77','97','99','177','197','199','777','50','90','150','750','178','98','198','23','123','66','96','163','716'];
+const tiers=[
+ {name:'Обычный',chance:0.67,mult:1,color:'#aeb8c8'},
+ {name:'Редкий',chance:0.22,mult:3,color:'#72c9ff'},
+ {name:'Эпический',chance:0.075,mult:9,color:'#c28cff'},
+ {name:'Легендарный',chance:0.028,mult:30,color:'#ffd16e'},
+ {name:'Мифический',chance:0.007,mult:120,color:'#ff8b9e'}
+];
+const defaults={coins:1000,collection:[],rolls:0,level:1,luck:0,speed:0,lastDaily:'',taskDay:'',taskProgress:0,taskClaimed:false};
+let s;try{s={...defaults,...JSON.parse(localStorage.getItem('nl_save')||'{}')}}catch{s={...defaults}}
+let current=null;
+function save(){localStorage.setItem('nl_save',JSON.stringify(s));renderStats()}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2100)}
+function sound(freq=620,dur=.11){try{let c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=freq;o.type='sine';g.gain.setValueAtTime(.07,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+dur);o.start();o.stop(c.currentTime+dur)}catch{}}
+function renderStats(){$('coins').textContent=fmt(s.coins);$('count').textContent=s.collection.length;$('level').textContent=s.level}
+function pickTier(){let r=Math.random(),luck=s.luck*.0015;let weights=tiers.map((t,i)=>t.chance*(i===0?1-luck*4:1+luck*i*1.7));let sum=weights.reduce((a,b)=>a+b,0);r*=sum;for(let i=0;i<weights.length;i++){r-=weights[i];if(r<=0)return tiers[i]}return tiers[0]}
+function makeNumber(){let t=pickTier(),num,reg; if(t.name==='Мифический')num='А777АА';else if(t.name==='Легендарный')num=Math.random()<.5?'Е001КХ':'А777МР';else if(t.name==='Эпический')num=letters[Math.floor(Math.random()*letters.length)]+'00'+Math.floor(Math.random()*10)+letters[Math.floor(Math.random()*letters.length)]+letters[Math.floor(Math.random()*letters.length)];else num=letters[Math.floor(Math.random()*letters.length)]+String(Math.floor(Math.random()*1000)).padStart(3,'0')+letters[Math.floor(Math.random()*letters.length)]+letters[Math.floor(Math.random()*letters.length)];reg= t.name==='Мифический'?'77':regions[Math.floor(Math.random()*regions.length)];let base= t.name==='Обычный'?150:t.name==='Редкий'?500:t.name==='Эпический'?1800:t.name==='Легендарный'?12000:60000;let value=Math.round(base*t.mult/tiers.find(x=>x.name===t.name).mult*(.8+Math.random()*.6));return{id:Date.now()+Math.random(),plate:num,region:reg,tier:t.name,value,color:t.color}}
+function showCurrent(n){current=n;$('plate').innerHTML=n.plate+' <span class="region">'+n.region+'</span>';$('rarity').textContent=n.tier;$('rarity').style.color=n.color;$('plateValue').textContent=fmt(n.value);$('plateHint').textContent='Номер получен! Решай: оставить или продать.';$('sellCurrent').disabled=false;$('keepCurrent').disabled=false}
+$('roll').onclick=()=>{let cost=Math.max(25,100-s.speed*10);if(s.coins<cost){toast('Не хватает монет. Продай номер или забери бонус.');return}s.coins-=cost;s.rolls++;s.taskProgress++;let n=makeNumber();showCurrent(n);sound(n.tier==='Мифический'?980:n.tier==='Легендарный'?820:560,.16);if(s.rolls%10===0)s.level++;save();renderTasks();$('roll').textContent='🎲 Сгенерировать номер · '+fmt(cost)};
+$('sellCurrent').onclick=()=>{if(!current)return;s.coins+=current.value;toast('Продано за '+fmt(current.value));current=null;$('sellCurrent').disabled=$('keepCurrent').disabled=true;$('plate').innerHTML='А 000 АА <span class="region">77</span>';$('rarity').textContent='СДЕЛКА ЗАКРЫТА';$('plateValue').textContent='—';save()};
+$('keepCurrent').onclick=()=>{if(!current)return;s.collection.unshift(current);toast('Номер добавлен в коллекцию');current=null;$('sellCurrent').disabled=$('keepCurrent').disabled=true;$('plate').innerHTML='А 000 АА <span class="region">77</span>';$('rarity').textContent='СОХРАНЕНО';$('plateValue').textContent='—';save();renderCollection();renderTasks()};
+function renderCollection(){let el=$('collectionList');$('collectionMeta').textContent='Найдено: '+s.collection.length+' · Можно продать любой номер из коллекции.';if(!s.collection.length){el.innerHTML='<div class="empty">Пока пусто. Первая находка ждёт тебя в генераторе.</div>';return}el.innerHTML=s.collection.map(n=>`<div class="item"><div class="mini-plate">${n.plate}<small> ${n.region}</small></div><div class="item-info"><b style="color:${n.color}">${n.tier}</b><small>${fmt(n.value)}</small></div><button data-sell="${n.id}">Продать</button></div>`).join('');el.querySelectorAll('[data-sell]').forEach(b=>b.onclick=()=>{let i=s.collection.findIndex(n=>String(n.id)===b.dataset.sell);if(i<0)return;let n=s.collection.splice(i,1)[0];s.coins+=n.value;save();renderCollection();renderTasks();toast('Продано за '+fmt(n.value))})}
+function renderUpgrades(){let data=[{key:'luck',name:'Удача',desc:'Немного повышает шанс редких находок.',base:700,step:1},{key:'speed',name:'Быстрый генератор',desc:'Снижает стоимость каждой попытки.',base:500,step:1}];$('upgradeList').innerHTML=data.map(x=>{let cost=x.base*(s[x.key]+1);return `<div class="upgrade"><h3>${x.name} · ур. ${s[x.key]}</h3><p>${x.desc}</p><button data-up="${x.key}">Улучшить · ${fmt(cost)}</button></div>`}).join('');$('upgradeList').querySelectorAll('[data-up]').forEach(b=>b.onclick=()=>{let k=b.dataset.up,cost=(k==='luck'?700:500)*(s[k]+1);if(s.coins<cost){toast('Недостаточно монет');return}s.coins-=cost;s[k]++;save();renderUpgrades();toast('Улучшение куплено!')})}
+function today(){return new Date().toLocaleDateString('en-CA')}
+function renderTasks(){if(s.taskDay!==today()){s.taskDay=today();s.taskProgress=0;s.taskClaimed=false;save()}$('dailyStatus').textContent=s.lastDaily===today()?'Сегодняшний бонус уже получен.':'Бонус доступен сегодня.';$('dailyReward').disabled=s.lastDaily===today();$('dailyReward').textContent=s.lastDaily===today()?'Бонус получен':'Получить +500 ₽';let p=Math.min(5,s.taskProgress);$('tasks').innerHTML=`<div class="task"><b>Охотник за номерами</b><div class="small muted">Сгенерируй 5 номеров · Награда: 350 ₽</div><div class="bar"><i style="width:${p/5*100}%"></i></div><div class="row"><small class="muted">${p}/5</small><button id="claimTask" ${s.taskClaimed||p<5?'disabled':''}>${s.taskClaimed?'Получено':'Забрать 350 ₽'}</button></div></div>`;$('claimTask').onclick=()=>{if(s.taskClaimed||p<5)return;s.taskClaimed=true;s.coins+=350;save();renderTasks();toast('Награда задание: +350 ₽')}}
+$('dailyReward').onclick=()=>{if(s.lastDaily===today())return;s.lastDaily=today();s.coins+=500;save();renderTasks();toast('Ежедневный бонус: +500 ₽')};
+function renderGallery(){let arr=[{plate:'А777АА',region:'77',tier:'Мифический',value:720000},{plate:'Е001КХ',region:'97',tier:'Легендарный',value:360000},{plate:'М777ММ',region:'777',tier:'Легендарный',value:300000},{plate:'А100АА',region:'99',tier:'Эпический',value:16000},{plate:'К555КК',region:'50',tier:'Редкий',value:1500}];$('galleryList').innerHTML=arr.map(n=>`<div class="item"><div class="mini-plate">${n.plate}<small> ${n.region}</small></div><div class="item-info"><b>${n.tier}</b><small>Игровая оценка: ${fmt(n.value)}</small></div></div>`).join('')}
+function tab(name){document.querySelectorAll('section').forEach(x=>x.classList.toggle('active',x.id===name));document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));if(name==='collection')renderCollection();if(name==='upgrades')renderUpgrades();if(name==='daily')renderTasks();if(name==='gallery')renderGallery()}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+renderStats();renderCollection();renderUpgrades();renderTasks();renderGallery();
+})();
+</script>
+</body></html>
